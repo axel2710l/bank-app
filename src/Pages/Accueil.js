@@ -26,9 +26,7 @@ const Accueil = () => {
       <h1>
             Bienvenue dans <span>REACT BANK!</span>
           </h1>
-          <img className="img_accueil" src={image}></img>
       <div className="accueil">
-      
         <div className="text_accueil">
           <h3>
             Gérez votre compte, effectuez des transactions et profitez de nos prêts en toute sécurité.
@@ -37,6 +35,7 @@ const Accueil = () => {
                 to="/Inscription"
                  id="commencer">Commencer</NavLink>
         </div>
+        <img src={image}></img>
       </div>
     </div>
   );
