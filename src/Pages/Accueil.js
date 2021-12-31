@@ -12,18 +12,18 @@ const Accueil = () => {
         <img src={logo}></img>
         <div className="btn_accueil">
           <NavLink exact
-                to="/Inscription"
+                to="/sign-up"
                  id="inscrition_accueil">
             Inscription
           </NavLink> 
           <NavLink exact
-                to="/Connexion"
+                to="/sign-in"
                   id="connexion_accueil">
             Connexion
           </NavLink>
         </div>
       </div>
-      <h1>
+      <h1 className="bienvenue">
             Bienvenue dans <span>REACT BANK!</span>
           </h1>
       <div className="accueil">
@@ -32,7 +32,7 @@ const Accueil = () => {
             Gérez votre compte, effectuez des transactions et profitez de nos prêts en toute sécurité.
           </h3>
           <NavLink exact
-                to="/Inscription"
+                to="/sign-up"
                  id="commencer">Commencer</NavLink>
         </div>
         <img src={image}></img>
