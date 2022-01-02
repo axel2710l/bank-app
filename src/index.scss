@@ -5,6 +5,10 @@ $color-principale: #46a4fb;
 $color-secondaire: #58c8eb;
 $color-titre: #0888ff;
 $color-option: #084a87;
+$color-input: #58c9eb91;
+$color-vert: #32f245;
+$color-jaune: #fce465;
+$color-rouge: #f31f1f;
 
 body {
   -webkit-font-smoothing: antialiased;
@@ -27,7 +31,10 @@ body {
 }
 
 .navbar_accueil a,
-.accueil a,.sidebar a {
+.accueil a,
+.sidebar a,
+.navbar a,
+.colonne a {
   margin: 0px;
   padding: 10px;
   text-decoration: none;
@@ -66,6 +73,7 @@ body {
     font-size: 1.2em;
     border-radius: 5px;
     border: $color-secondaire 1px solid;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.11);
   }
 
   #inscrition_accueil {
@@ -123,6 +131,7 @@ body {
       font-weight: bold;
       background-color: $color-principale;
       border: $color-principale 1px solid;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
     #commencer:hover {
       filter: brightness(110%);
@@ -152,45 +161,59 @@ body {
   background-color: $color-secondaire;
   text-align: left;
   color: white;
-  h2 {
-    padding-top: 13px;
-    margin-left: 230px;
-    font-weight: lighter;
+  #navbar_link {
+    margin-left: 229px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    a {
+      font-weight: lighter;
+      color: white;
+      font-size: large;
+      margin-right: 7px;
+      padding: 0;
+    }
+    a:hover {
+      filter: brightness(110%);
+      color: $color-option;
+      font-weight: bold;
+      transition: 0.1s ease-in-out;
+    }
   }
 }
 
-.sidebar{
+.sidebar {
   height: 900px;
-  width: 230px;
+  width: 270px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: $color-secondaire;
-  .photo{
+  .photo {
     height: 170px;
     width: 170px;
     border-radius: 50%;
     margin-bottom: 10px;
-    img{
+    img {
       height: 100%;
       width: 100%;
     }
   }
-  h3{
+  h3 {
     font-weight: bold;
     color: white;
     font-size: 1.7em;
   }
-  p{
+  p {
     color: white;
     font-size: 1.1em;
   }
-  .email{
+  .email {
     margin-top: 20px;
     margin-bottom: 35px;
     font-size: 1em;
   }
-  .solde{
+  .solde {
     font-size: larger;
     margin-bottom: 25px;
   }
@@ -206,7 +229,7 @@ body {
     background-color: $color-principale;
     border: $color-principale 1px solid;
   }
-  button{
+  button {
     margin-top: 70px;
     font-size: 1.1em;
     color: white;
@@ -215,17 +238,200 @@ body {
     font-weight: bold;
     height: 45px;
     width: 186px;
+    cursor: pointer;
   }
-  #historique:hover, button:hover {
+  #historique:hover,
+  button:hover {
     filter: brightness(110%);
     transition: 0.1s ease-in-out;
   }
 }
 
-.colonne{
+.colonne {
   display: flex;
-  .contenu{
+  .contenu {
     height: 100%;
     width: 100%;
+    text-align: center;
+    color: $color-principale;
+    margin-top: 50px;
+    .container_choix {
+      width: 90%;
+      height: 100%;
+      margin-top: 50px;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: space-around;
+      a {
+        width: 29%;
+        height: 450px;
+        border-radius: 15px;
+        border: $color-secondaire 1px solid;
+        h2 {
+          margin: 0px 17px;
+          color: $color-option;
+          font-weight: normal;
+          position: relative;
+          top: 7%;
+        }
+      }
+      img {
+        height: 70%;
+        width: 90%;
+      }
+      .choix1{
+        filter: brightness(110%);
+      }
+      .choix3{
+        height: 70%;
+        width: 100%;
+      }
+      a:hover {
+        transform: scale(1.05);
+        filter: brightness(107%);
+        border: $color-principale 5px solid;
+        transition: 0.1s ease-in-out;
+        h2 {
+          transform: scale(1.1);
+          font-weight: bold;
+          color: $color-principale;
+        }
+      }
+    }
+    .depot_titre {
+      position: relative;
+      margin-top: 100px;
+      width: 70%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2.5em;
+    }
+    .depot {
+      width: 50%;
+      height: 100%;
+      margin-top: 50px;
+      position: relative;
+      left: 52.9%;
+      transform: translateX(-50%);
+      text-align: left;
+      .depotretrait {
+        width: 90%;
+        height: 70px;
+        margin-bottom: 17px;
+        border-radius: 15px;
+        border: $color-secondaire thin solid;
+        text-align: left;
+        font-size: 1.2em;
+        padding-left: 17px;
+        color: $color-secondaire;
+        outline: none;
+      }
+      .depotretrait::placeholder {
+        color: $color-input;
+      }
+      .depotretrait:focus {
+        outline: $color-principale 2px solid;
+      }
+      span {
+        font-size: 1.7em;
+        color: $color-secondaire;
+      }
+      .btn{
+        margin-top: 25px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        button{
+          width: 200px;
+          height: 70px;
+          border-radius: 15px;
+          color: white;
+          font-size: 1.45em;
+          font-weight: bold;
+          cursor: pointer;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        .retirer{
+          border: $color-jaune thin solid;
+          background-color: $color-jaune;
+        }
+        .deposer{
+          border: $color-vert thin solid;
+          background-color: $color-vert;
+        }
+        button:hover{
+          filter: brightness(110%);
+          transition: 0.1s ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+.popup{
+  background-color: #fff;
+  border: $color-secondaire thIN solid;
+  border-radius: 15px;
+  height: 500px;
+  width: 77%;
+  position: fixed;
+  top: 50%;
+  left: 58%;
+  transform: translate(-50%,-50%);
+  z-index: 100;
+  h1{
+    margin-top: 17px;
+    width: 50%;
+    position: relative;
+    left: 50%;
+   transform: translateX(-50%);
+  }
+  .input_popup{
+    width: 70%;
+    height: 70px;
+    margin-bottom: 17px;
+    border-radius: 15px;
+    border: $color-secondaire thin solid;
+    text-align: left;
+    font-size: 1.2em;
+    padding-left: 17px;
+    color: $color-secondaire;
+    outline: none;
+  }
+   .input_popup::placeholder {
+    color: $color-input;
+  }
+   .input_popup:focus {
+    outline: $color-principale 2px solid;
+  }
+  .btn_popup{
+    margin-top: 25px;
+    position: relative;
+    left: 40%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    button{
+      width: 200px;
+      height: 70px;
+      border-radius: 15px;
+      color: white;
+      font-size: 1.45em;
+      font-weight: bold;
+      cursor: pointer;
+      border: $color-vert thin solid;
+      background-color: $color-vert;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    button:hover{
+      filter: brightness(110%);
+      transition: 0.1s ease-in-out;
+    }
   }
 }
