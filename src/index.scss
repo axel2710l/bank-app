@@ -6,7 +6,7 @@ $color-secondaire: #58c8eb;
 $color-titre: #0888ff;
 $color-option: #084a87;
 $color-input: #58c9eb91;
-$color-components: #58c9eb38;
+$color-components: #58c9eb28;
 $color-vert: #32f245;
 $color-jaune: #fce465;
 $color-rouge: #f31f1f;
@@ -460,25 +460,6 @@ body {
     opacity: 0.7;
     outline: none;
     font-size: 1.2em;
-  }
-  button {
-    margin: auto 17px;
-    padding: 0;
-    height: 35px;
-    width: 150px;
-    border-style: solid;
-    border-width: thin;
-    border-color: $color-principale;
-    color: $color-principale;
-    font-weight: bolder;
-    font-size: 1em;
-    border-radius: 7px;
-    background-color: white;
-    cursor: pointer;
-  }
-  button:hover{
-    filter: brightness(110%);
-    transition: 0.1s ease-in-out;
   }
 }
 

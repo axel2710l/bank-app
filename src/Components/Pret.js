@@ -3,7 +3,7 @@ import React from 'react';
 const Pret = () => {
     return (
         <div>
-            <h1>Formulaire Prêt</h1>
+            <h1>Formulaire de prêt</h1>
         </div>
     );
 };

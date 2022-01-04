@@ -8,7 +8,6 @@ const HistoriqueClient = () => {
   return (
     <div className="container">
       <div className="navbar">
-        {" "}
         <div id="navbar_link">
           <NavLink exact to="/Profil">
             Tableau de bord &gt;
