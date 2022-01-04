@@ -5,6 +5,7 @@ import Vide from "../Components/Vide";
 import SidebarClient from "../Components/SidebarClient";
 
 const Transfert = () => {
+  
   return (
     <div className="container">
       <div className="navbar">

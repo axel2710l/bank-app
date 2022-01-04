@@ -7,6 +7,7 @@ import AjoutSolde from "./Pages/AjoutSolde";
 import ProfilClient from "./Pages/ProfilClient";
 import DepotRetrait from "./Pages/DepotRetrait";
 import Transfert from "./Pages/Transfert";
+import ConfirmTransfert from "./Pages/ConfirmTransfert";
 import DemandePret from "./Pages/DemandePret";
 import HistoriqueClient from "./Pages/HistoriqueClient";
 import ProfilAdmin from "./Pages/ProfilAdmin";
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/Profil" exact component={ProfilClient} />
         <Route path="/User/DepotRetrait" exact component={DepotRetrait} />
         <Route path="/User/Transfert" exact component={Transfert} />
+        <Route path="/User/Transfert/Confirm" exact component={ConfirmTransfert} />
         <Route path="/User/DemandePret" exact component={DemandePret} />
         <Route path="/User/Historique" exact component={HistoriqueClient} />
         <Route path="/ProfilAdmin" exact component={ProfilAdmin} />

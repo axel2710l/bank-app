@@ -374,69 +374,6 @@ body {
   }
 }
 
-.popup {
-  background-color: #fff;
-  border: $color-secondaire thIN solid;
-  border-radius: 15px;
-  height: 500px;
-  width: 77%;
-  position: fixed;
-  top: 50%;
-  left: 58%;
-  transform: translate(-50%, -50%);
-  z-index: 100;
-  h1 {
-    margin-top: 17px;
-    width: 50%;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .input_popup {
-    width: 70%;
-    height: 70px;
-    margin-bottom: 17px;
-    border-radius: 15px;
-    border: $color-secondaire thin solid;
-    text-align: left;
-    font-size: 1.2em;
-    padding-left: 17px;
-    color: $color-secondaire;
-    outline: none;
-  }
-  .input_popup::placeholder {
-    color: $color-input;
-  }
-  .input_popup:focus {
-    outline: $color-principale 2px solid;
-  }
-  .btn_popup {
-    margin-top: 25px;
-    position: relative;
-    left: 40%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    button {
-      width: 200px;
-      height: 70px;
-      border-radius: 15px;
-      color: white;
-      font-size: 1.45em;
-      font-weight: bold;
-      cursor: pointer;
-      border: $color-vert thin solid;
-      background-color: $color-vert;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    }
-    button:hover {
-      filter: brightness(110%);
-      transition: 0.1s ease-in-out;
-    }
-  }
-}
-
 .recherche_container {
   margin-top: 17px;
   position: relative;
@@ -474,9 +411,8 @@ body {
   display: block;
   border-radius: 5px;
   text-align: center;
-}
-.component,
-.component_vide {
+
+.component{
   border-radius: 5px;
   height: auto;
   min-height: 70px;
@@ -493,9 +429,79 @@ body {
     margin: auto 17px;
     color: $color-secondaire;
   }
+  .mail{
+    width: 30%;
+    text-align: left;
+  }
+  .btn_pret{
+    height: auto;
+    width: auto;
+    margin-right: 17px;
+    display: flex;
+    gap: 7px;
+    button{
+      height: 30px;
+      padding-left: 7px;
+      padding-right: 7px;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+      border: none;
+      font-weight: bold;
+    }
+    .plusinfo{
+      background-color: $color-jaune;
+    }
+    .accepter{
+      background-color: $color-vert;
+    }
+    .refuser{
+      background-color: $color-rouge;
+    }
+    #transferer_btn{
+      margin-top: 15px;
+      padding-left: 17px;
+      padding-right: 17px;
+      height: 20px;
+      font-size: 0.9em;
+      text-align: center;
+      font-weight: bold;
+      color: white;
+      background-color: $color-vert;
+      border: none;
+    }
+    button:hover,
+    #transferer_btn:hover{
+      filter: brightness(110%);
+      transition: 0.1s ease-in-out;
+    }
+  }
+  .transfert_admin{
+    width: 55%;
+    text-align: left;
+  }
+  img{
+    height: 50px;
+    margin: auto 17px;
+  }
+  .clients{
+    width: 20%;
+    text-align: left;
+  }
+}
 }
 
 .component_vide {
+  border-radius: 5px;
+  min-height: 70px;
+  margin-bottom: 2px;
+  width: 99%;
+  display: flex;
+  background-color: $color-components;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
   justify-content: center;
   height: 200px;
