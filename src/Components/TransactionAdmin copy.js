@@ -1,6 +1,6 @@
 import React from "react";
 
-const UserTransfert = () => {
+const TransactionAdmin = () => {
   return (
     <div className="component">
       <p>ZEKAZE</p>
@@ -11,4 +11,4 @@ const UserTransfert = () => {
   );
 };
 
-export default UserTransfert;
+export default TransactionAdmin;
