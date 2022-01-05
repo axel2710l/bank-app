@@ -1,52 +1,42 @@
-import React from "react";
-import SidebarAdmin from "../Components/SidebarAdmin";
-import '../Styles/ProfilClient.scss'
-import commande1 from '../Images/historiqueTransactions.png'
-import commande3 from '../Images/ListeClients.jpg'
-import commande2 from '../Images/DemandePret.jpg'
+import React from 'react';
 import { NavLink } from "react-router-dom";
+import SidebarAdmin from "../Components/SidebarAdmin";
+import Historique from "../Images/Historique.png"
+import PretAdmin from "../Images/PretAdmin.jpg"
+import ListeClients from "../Images/ListeClients.jpg"
 
 const ProfilAdmin = () => {
-  return (
-    <div className="container" id="profil-client">
+    return (
+        <div className="container">
       <div className="navbar">
-        <h2>Tableau de bord</h2>
+      <div id="navbar_link">
+          <NavLink exact to="/ProfilAdmin">
+            Tableau de bord 
+          </NavLink>
+        </div>
       </div>
       <div className="colonne">
         <SidebarAdmin />
-        <div className="contenu">
-            <h1>Bonjour Jhon, Que souhaitez vous faire ? </h1>
-            <div className="commandes">
-                
-                <div className="commande">
-                <NavLink exact to="/Admin/Historique">
-                    <img src={commande1} alt="Historique des transactions" id="img-transactions" />
-                    <h3>Historique des transactions</h3>
-                    </NavLink>
-                </div>
-                
-                
-                
-                <div className="commande">
-                <NavLink exact to="/Admin/Pret">
-                    <img src={commande2} alt="Gerer les demandes de pret" />
-                    <h3>Gérer les Demandes de Pret</h3>
-                    </NavLink>
-                </div>
-                
-                
-                <div className="commande">
-                <NavLink exact to="/Admin/ListeClients">
-                    <img src={commande3} alt="Liste des clients " id="img-liste" />
-                    <h3>Liste des Clinents </h3>
-                    </NavLink>
-                </div>
-                
-            </div>
+        <div className="contenu"> 
+        <h1>Bienvenue, que voulez-vous faire ?</h1>
+        <div className="container_choix"> 
+        <NavLink exact to="/Admin/Historique">
+          <img src={Historique} className='choix1'></img>
+            <h2>Voir l'historique des transactions</h2>
+          </NavLink>
+          <NavLink exact to="/Admin/Pret">
+          <img src={PretAdmin}></img>
+            <h2>Gérer les demandes de prêt</h2>
+          </NavLink>
+          <NavLink exact to="/Admin/ListeClients" >
+          <img src={ListeClients} className='choix3'></img>
+            <h2>Voir la liste détaillée des clients</h2>
+          </NavLink>
+          </div>
         </div>
       </div>
     </div>
-  );
+    );
 };
 
 export default ProfilAdmin;
