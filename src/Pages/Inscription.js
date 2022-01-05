@@ -1,11 +1,18 @@
 import React from "react";
-// import "../index.scss";
-import "../Styles/Inscription.scss";
+import "../index.scss";
+import "../Inscription.scss";
 import { NavLink } from "react-router-dom";
-
+import { useEffect } from "react";
 import image from "../Images/Inscription.png";
+import { signup } from "../utils/auth";
+import { click } from "@testing-library/user-event/dist/click";
+import { getAuth } from "firebase/auth";
 
-const Inscription = () => {
+const Inscription =  () => {
+  useEffect(() => {
+    // recupérer les infos current user
+    console.log(getAuth().currentUser);
+  }, [])
   return (
     <div id="inscription" className="container inscription">
       <div className="image">
@@ -47,9 +54,7 @@ const Inscription = () => {
               placeholder="Confirmez votre mot de passe "
             />
           </div>
-          <div className="full-width">
-            <button className="btn">S'inscrire</button>
-          </div>
+  
           <div className="full-width sign-in">
             <p>
               Vous êtes déja inscrit?{" "}
@@ -59,6 +64,9 @@ const Inscription = () => {
             </p>
           </div>
         </form>
+        <div className="full-width">
+            <button className="btn" onClick={()=> {signup()}} >S'inscrire</button>
+          </div>
       </div>
     </div>
   );
