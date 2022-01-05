@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
+
+$font-1: "Poppins", sans-serif;
+$color-principale: #46a4fb;
+$color-secondaire: #58c8eb;
+$color-titre: #0888ff;
+$color-option: #084a87;
+
+#profil-client {
+  .contenu {
+    h1 {
+      color: $color-titre;
+      margin: 3rem auto;
+      width: max-content;
+    }
+    .commandes {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      .commande {
+        border: 2px $color-secondaire solid;
+        width: 27%;
+        height: 60vh;
+        position: relative;
+        img{
+            width: 90%;
+            margin: 30px 0;
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
+        #img-transactions{
+            margin-top: 0;
+            width: 80%;
+        }
+        #img-liste{
+            width: 100%;
+            margin-top: 70px;
+        }
+        h3{
+            transition: all 0.3s ease 0s;
+            position: absolute;
+            width: max-content;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            // margin: 10px auto;
+            color: $color-principale;
+        }
+      }
+      .commande:hover{
+        border: 3px $color-secondaire solid;
+        cursor: pointer;
+        h3{
+            transform: translateX(-50%) scale(1.2) translateY(-20px);
+            transition: all 0.3s ease 0s;
+        }
+      }
+    }
+  }
+}
