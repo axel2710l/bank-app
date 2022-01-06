@@ -68,8 +68,8 @@ body {
     margin: 7px;
     padding-left: 17px;
     padding-right: 17px;
-    height: 25px;
-    width: 100px;
+    height: 4rem;
+    width: fit-content;
     text-align: center;
     font-size: 1.2em;
     border-radius: 5px;
@@ -84,6 +84,7 @@ body {
 
   #connexion_accueil {
     color: $color-secondaire;
+    background-color: white;
   }
 
   #inscrition_accueil:hover,
@@ -121,11 +122,11 @@ body {
       margin-left: 100px;
     }
     #commencer {
-      margin-left: 150px;
-      margin-right: auto;
+      margin-left: 50%;
+      transform: translateX(-50%);
+      margin-top: 2.5rem;
       padding: 17px 25px;
-      height: 25px;
-      width: 100px;
+      width: 30%px;
       font-size: 1.2em;
       border-radius: 15px;
       color: white;

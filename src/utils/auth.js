@@ -3,13 +3,14 @@ import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { addClient, addEmploye } from "./addData";
 import db from './config'
 
-export const signup = async () => {
+export const signup = () => {
 
 
     const provider = new GoogleAuthProvider();
     const auth = getAuth();
     signInWithPopup(auth, provider)
       .then((result) => {
+          console.log('result :');
           console.log(result);
 
         // This gives you a Google Access Token. You can use it to access the Google API.
@@ -17,7 +18,8 @@ export const signup = async () => {
         const token = credential.accessToken;
         // The signed-in user info.
         const user = result.user;
-        console.log(user);
+        // console.log('user:');
+        // console.log(user);
         const userData = {
             email : user.email,
             nom : user.displayName,
@@ -42,6 +44,7 @@ export const signup = async () => {
           localisation: "Alger",
         }); */
         // ...
+      return user
       })
       .catch((error) => {
         console.log(error);
@@ -53,6 +56,7 @@ export const signup = async () => {
         // The AuthCredential type that was used.
         const credential = GoogleAuthProvider.credentialFromError(error);
         // ...
+      return ''
       });
 
 }

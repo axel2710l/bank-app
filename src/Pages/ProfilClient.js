@@ -8,8 +8,15 @@ import commande1 from "../Images/DepotRetrait.jpg";
 import commande2 from "../Images/Transfert.jpg";
 import commande3 from "../Images/DemandePret.jpg";
 import "../Styles/ProfilClient.scss";
+import { getAuth } from "firebase/auth";
+import { useEffect } from "react";
 
 const ProfilClient = () => {
+  useEffect(() => {
+    // recupérer les infos current user
+    console.log(getAuth().currentUser);
+
+  }, [])
   return (
     <div className="container" id="profil-client">
       <div className="navbar">

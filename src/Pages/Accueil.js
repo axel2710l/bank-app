@@ -4,23 +4,39 @@ import { NavLink } from "react-router-dom";
 import "../index.scss";
 import image from "../Images/accueil.png";
 import logo from "../Images/Logo.png";
+import { signup } from "../utils/auth";
+import { getAuth } from "firebase/auth";
+
 
 const Accueil = () => {
+  const [connected, setConnected] = useState(false)
+
+
+  const sign= () => {
+
+    const user = signup().then((result) => {console.log(result)})
+
+    console.log(user);
+
+  }
+  //  function sign(){
+  //    console.log('start');
+
+  //   const user =  signup()
+  //   console.log(getAuth().currentUser)
+  //   if (user.solde==='') {
+  //     //go to 'solde initial'
+  //   }else{
+  //     //go to 'Profil' with parameter: user
+  //   }
+  // }
   return (
     <div className="container">
       <div className="navbar_accueil">
         <img src={logo}></img>
         <div className="btn_accueil">
-          <NavLink exact
-                to="/sign-up"
-                 id="inscrition_accueil">
-            Inscription
-          </NavLink> 
-          <NavLink exact
-                to="/sign-in"
-                  id="connexion_accueil">
-            Connexion
-          </NavLink>
+        <button  id="inscrition_accueil" onClick={()=> {sign()}}> Inscription</button>
+         <button  id="connexion_accueil" onClick={()=> {sign()}}> Connexion</button>
         </div>
       </div>
       <h1 className="bienvenue">
@@ -31,9 +47,7 @@ const Accueil = () => {
           <h3>
             Gérez votre compte, effectuez des transactions et profitez de nos prêts en toute sécurité.
           </h3>
-          <NavLink exact
-                to="/sign-up"
-                 id="commencer">Commencer</NavLink>
+          <button  id="commencer" onClick={()=> {sign()}} >Commencer</button>
         </div>
         <img src={image}></img>
       </div>
