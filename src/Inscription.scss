@@ -1,125 +1,125 @@
 
-   $font-1: "Poppins", sans-serif;
-   $color-principale: #46a4fb;
-   $color-secondaire: #58c8eb;
-   $color-titre: #0888ff;
-   $color-option: #084a87;
+//    $font-1: "Poppins", sans-serif;
+//    $color-principale: #46a4fb;
+//    $color-secondaire: #58c8eb;
+//    $color-titre: #0888ff;
+//    $color-option: #084a87;
    
 
-.inscription{
+// .inscription{
 
-    // background-color: black;
-    // color: red;
-    display: flex;
-    .image{
-        border: $color-secondaire 1px solid;
-        width: 50%;
-        height: 100vh;
-        margin: 0;
-        // background-color: aquamarine;
-        display: flex;
-        img{
-            width: 80%;
-            margin: auto;
-            align-items: center;
-        }
-    }
-    .form-insc{
-        position: relative;
-        // display: flex;
-        width: 50%;
-        height: 100vh;
-        border: $color-secondaire 1px solid;
-        margin: 0;
-        .title{
-            width: 100%;
-            h1{
-                color: $color-titre;
-                margin: auto;
-                width: max-content;
-                margin-top: 10vh;
-            }
-        }
+//     // background-color: black;
+//     // color: red;
+//     display: flex;
+//     .image{
+//         border: $color-secondaire 1px solid;
+//         width: 50%;
+//         height: 100vh;
+//         margin: 0;
+//         // background-color: aquamarine;
+//         display: flex;
+//         img{
+//             width: 80%;
+//             margin: auto;
+//             align-items: center;
+//         }
+//     }
+//     .form-insc{
+//         position: relative;
+//         // display: flex;
+//         width: 50%;
+//         height: 100vh;
+//         border: $color-secondaire 1px solid;
+//         margin: 0;
+//         .title{
+//             width: 100%;
+//             h1{
+//                 color: $color-titre;
+//                 margin: auto;
+//                 width: max-content;
+//                 margin-top: 10vh;
+//             }
+//         }
         
-        form{
-            width: 100%;
+//         form{
+//             width: 100%;
             
-            input{
-                border-radius: 0;
-                border: 1px $color-secondaire solid;
-                font-size: 18px;
-                padding: 0 12px;
-            }
-            input::placeholder{
-               font-size: 18px;
-                // margin: 0 12px;
-                // color: red;
-            }
+//             input{
+//                 border-radius: 0;
+//                 border: 1px $color-secondaire solid;
+//                 font-size: 18px;
+//                 padding: 0 12px;
+//             }
+//             input::placeholder{
+//                font-size: 18px;
+//                 // margin: 0 12px;
+//                 // color: red;
+//             }
 
-            .nom-prenom{
-                margin-top: 2.5rem;
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                width: 80%;
-                margin-left: 10%;
-                .half-width{
-                    // width: 50%;
-                    margin: 0;
-                    input{
-                        width: 90%;
-                        height: 3rem;
-                    }
-                    #prenom{
-                        margin-right: 10px;
-                        margin-left: 8%;
-                    }
-                }
+//             .nom-prenom{
+//                 margin-top: 2.5rem;
+//                 display: grid;
+//                 grid-template-columns: 1fr 1fr;
+//                 width: 80%;
+//                 margin-left: 10%;
+//                 .half-width{
+//                     // width: 50%;
+//                     margin: 0;
+//                     input{
+//                         width: 90%;
+//                         height: 3rem;
+//                     }
+//                     #prenom{
+//                         margin-right: 10px;
+//                         margin-left: 8%;
+//                     }
+//                 }
                
-            }
-            .full-width{
-                width: 100%;
-                input{
-                    width: 79%;
-                    margin-left: 10%;
-                    margin-top: 2.5rem;
-                    height: 3rem;
-                }
-            }
+//             }
+//             .full-width{
+//                 width: 100%;
+//                 input{
+//                     width: 79%;
+//                     margin-left: 10%;
+//                     margin-top: 2.5rem;
+//                     height: 3rem;
+//                 }
+//             }
             
-            .btn {
-                margin-left: 50%;
-                transform: translateX(-50%);
-                margin-top: 2.5rem;
-                padding: 17px 25px;
-                width: 30%px;
-                font-size: 1.2em;
-                border-radius: 15px;
-                color: white;
-                font-weight: bold;
-                background-color: $color-principale;
-                border: $color-principale 1px solid;
-                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+//             .btn {
+//                 margin-left: 50%;
+//                 transform: translateX(-50%);
+//                 margin-top: 2.5rem;
+//                 padding: 17px 25px;
+//                 width: 30%px;
+//                 font-size: 1.2em;
+//                 border-radius: 15px;
+//                 color: white;
+//                 font-weight: bold;
+//                 background-color: $color-principale;
+//                 border: $color-principale 1px solid;
+//                 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
                 
-              }
-              .btn:hover {
-                filter: brightness(110%);
-                transition: 0.1s ease-in-out;
-              }
+//               }
+//               .btn:hover {
+//                 filter: brightness(110%);
+//                 transition: 0.1s ease-in-out;
+//               }
 
 
-        }
-        .sign-in{
-            position: absolute;
-            bottom: 20px;
-            text-align: center;
-            // left: 50%;
-            // transform: translateX(-50%);
-        }
+//         }
+//         .sign-in{
+//             position: absolute;
+//             bottom: 20px;
+//             text-align: center;
+//             // left: 50%;
+//             // transform: translateX(-50%);
+//         }
 
-        // background-color: burlywood;
+//         // background-color: burlywood;
         
-    }
+//     }
     
-}
+// }
 
 

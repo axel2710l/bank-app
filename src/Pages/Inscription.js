@@ -1,6 +1,6 @@
 import React from "react";
 import "../index.scss";
-import "../Inscription.scss";
+import "../Styles/Inscription.scss";
 import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import image from "../Images/Inscription.png";
