@@ -512,3 +512,57 @@ body {
     font-size: larger;
   }
 }
+
+.full-width{
+    width: 50%;
+    height: 100%;
+    margin-top: 50px;
+    position: relative;
+    left: 52.9%;
+    transform: translateX(-50%);
+    text-align: left;
+    .depotretrait {
+      width: 90%;
+      height: 70px;
+      margin-bottom: 17px;
+      border-radius: 15px;
+      border: $color-secondaire thin solid;
+      text-align: left;
+      font-size: 1.2em;
+      padding-left: 17px;
+      color: $color-secondaire;
+      outline: none;
+    }
+    .depotretrait::placeholder {
+      color: $color-input;
+    }
+    .depotretrait:focus {
+      outline: $color-principale 2px solid;
+    }
+}
+.btn_pret_confirmer {
+  margin-top: 25px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+    width: 200px;
+    height: 70px;
+    border-radius: 15px;
+    color: white;
+    font-size: 1.45em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+    border: $color-vert thin solid;
+    background-color: $color-vert;
+  
+  .btn_pret_confirmer:hover {
+    filter: brightness(110%);
+    transition: 0.1s ease-in-out;
+  }
+}

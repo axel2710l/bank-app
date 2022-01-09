@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useAuth } from "../context/authContex";
 import { addPret } from "../utils/addData";
+import "../index.scss";
 
 const Pret = () => {
   const { currentUser } = useAuth();
@@ -37,23 +38,19 @@ const Pret = () => {
           <input
             type="number"
             name="montant"
+            className="depotretrait"
             placeholder="Montant de pret"
             onChange={handleMontant}
           />
-        </div>
-
-        <div className="full-width">
           <input
             type="number"
             name="salaire"
+            className="depotretrait"
             placeholder="Votre salaire actuel "
             onChange={handleSalaire}
           />
         </div>
-
-        <div className="full-width">
-          <input className="btn" type="submit" value={"Confirmer"} />
-        </div>
+          <input className="btn_pret_confirmer" type="submit" value={"Confirmer"} />
       </form>
     </div>
   );

@@ -48,19 +48,19 @@ const ProfilClient = () => {
                   alt="Retrait et Virement"
                   id="img-retrait"
                 />
-                <h3>Déposer ou retirer de l'argent</h3>
+                <h2>Déposer ou retirer de l'argent</h2>
               </NavLink>
             </div>
             <div className="commande">
               <NavLink exact to="/User/Transfert">
                 <img src={commande2} alt="Transfert" />
-                <h3>Transfert d'Argent </h3>
+                <h2>Transfert d'Argent </h2>
               </NavLink>
             </div>
             <div className="commande">
               <NavLink exact to="/User/DemandePret">
                 <img src={commande3} alt="Demande de pret" />
-                <h3>Demande de prêt Banquaire </h3>
+                <h2>Demande de prêt Banquaire </h2>
               </NavLink>
             </div>
           </div>

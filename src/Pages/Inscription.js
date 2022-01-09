@@ -3,7 +3,7 @@ import "../index.scss";
 import "../Styles/Inscription.scss";
 import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
-import image from "../Images/Inscription.png";
+import image from "../Images/connexion.png";
 import { signup } from "../utils/auth";
 import { click } from "@testing-library/user-event/dist/click";
 import { getAuth } from "firebase/auth";

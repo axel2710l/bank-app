@@ -15,8 +15,10 @@ $color-option: #084a87;
       width: max-content;
     }
     .commandes {
-      
-        width: 100%;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+        width: 90%;
         display: flex;
         justify-content: space-around;
       .commande {
@@ -45,25 +47,27 @@ $color-option: #084a87;
             margin-top: 70px;
             // margin-left: 0;
         }
-        h3{
+        h2{
             transition: all 0.3s ease 0s;
-            position: absolute;
             width: 80%;
-            bottom: 3rem;
-            left: 50%;
-            transform: translateX(-50%);
-            // margin: 10px auto;
-            color: $color-principale;
+            margin: 10px auto;
+            color: $color-option;
+            font-weight: normal;
+            position: relative;
+            top: 9%;
         }
       }
       .commande:hover{
-        border: 3px $color-secondaire solid;
         cursor: pointer;
-        transform: scale(1.1);
-        transition: all 0.3s ease 0s;
-        h3{
-            // transform: translateX(-50%) scale(1.2) translateY(-20px);
+        transform: scale(1.05);
+        filter: brightness(107%);
+        border: $color-principale 5px solid;
+        transition: 0.1s ease-in-out;
+        h2{
             transition: all 0.3s ease 0s;
+            transform: scale(1.1);
+            font-weight: bold;
+            color: $color-principale;
         }
       }
     }
