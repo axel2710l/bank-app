@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import SidebarClient from "../Components/SidebarClient";
 // import DepotRetrait from "../Images/DepotRetrait.jpg"
@@ -8,10 +8,27 @@ import commande1 from "../Images/DepotRetrait.jpg";
 import commande2 from "../Images/Transfert.jpg";
 import commande3 from "../Images/DemandePret.jpg";
 import "../Styles/ProfilClient.scss";
+import { getAuth } from "firebase/auth";
+import { getClientWithId } from "../utils/getData";
+import { useAuth } from "../context/authContex";
 
 const ProfilClient = () => {
+  const { currentUser } = useAuth();
+  const [clientData, setClientData] = useState({});
+  useEffect(() => {
+    async function fetch() {
+      const result = await getClientWithId(currentUser.uid);
+      setClientData(result);
+    }
+    fetch();
+  }, [currentUser]);
+  const getFirstName = () => {
+    if (currentUser) return currentUser.displayName.split(" ")[0];
+    return "";
+  };
   return (
     <div className="container" id="profil-client">
+      {console.log(clientData)}
       <div className="navbar">
         <div id="navbar_link">
           <NavLink exact to="/Profil">
@@ -20,9 +37,9 @@ const ProfilClient = () => {
         </div>
       </div>
       <div className="colonne">
-        <SidebarClient />
+        <SidebarClient data={clientData} />
         <div className="contenu">
-          <h1>Bonjour Jhon, Que souhaitez vous faire ? </h1>
+          <h1>{`Bonjour ${getFirstName()} , Que souhaitez vous faire ? `}</h1>
           <div className="commandes">
             <div className="commande">
               <NavLink exact to="/User/DepotRetrait">

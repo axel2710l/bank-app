@@ -1,13 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import GestionPret from "../Components/GestionPret";
 import SidebarAdmin from "../Components/SidebarAdmin";
+import Vide from "../Components/Vide";
+import { getPrets } from "../utils/getData";
 
 const PretAdmin = () => {
+  const [prets, setPrets] = useState();
+  useEffect(() => {
+    async function fetch() {
+      const mesPrets = await getPrets();
+      console.log("haahha");
+      console.log(mesPrets);
+      setPrets(mesPrets);
+    }
+    fetch();
+  }, []);
+  const mapPrets = prets
+    ? prets.map((pret) => {
+        if (!pret.confirme) {
+          return <GestionPret key={pret.id} data={pret} />;
+        }
+      })
+    : null;
+
   return (
     <div className="container">
       <div className="navbar">
-        {" "}
         <div id="navbar_link">
           <NavLink exact to="/ProfilAdmin">
             Tableau de bord &gt;
@@ -23,11 +42,7 @@ const PretAdmin = () => {
           <div className="recherche_container">
             <input placeholder="Rechercher..." autoFocus></input>
           </div>
-          <div className="component_container">
-            <GestionPret />
-            <GestionPret />
-            <GestionPret />
-          </div>
+          <div className="component_container">{mapPrets}</div>
         </div>
       </div>
     </div>

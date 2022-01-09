@@ -4,8 +4,9 @@ import SidebarAdmin from "../Components/SidebarAdmin";
 import commande1 from "../Images/Historique.png";
 import commande2 from "../Images/PretAdmin.jpg";
 import commande3 from "../Images/ListeClients.jpg";
-
+import { useAuth } from "../context/authContex";
 const ProfilAdmin = () => {
+  const { currentUser } = useAuth();
   return (
     <div className="container" id="profil-client">
       <div className="navbar">
@@ -18,10 +19,12 @@ const ProfilAdmin = () => {
       <div className="colonne">
         <SidebarAdmin />
         <div className="contenu">
-          <h1>Bonjour Jhon, Que souhaitez vous faire ? </h1>
+          <h1>{`Bonjour ${
+            currentUser.displayName.split(" ")[0]
+          }, Que souhaitez vous faire ? `}</h1>
           <div className="commandes">
             <div className="commande">
-              <NavLink exact to="/User/DepotRetrait">
+              <NavLink exact to="/Admin/Historique">
                 <img
                   src={commande1}
                   alt="Historique des transactions"
@@ -31,13 +34,13 @@ const ProfilAdmin = () => {
               </NavLink>
             </div>
             <div className="commande">
-              <NavLink exact to="/User/Transfert">
+              <NavLink exact to="/Admin/Pret">
                 <img src={commande2} alt="demandes de Pret" />
                 <h3>Gérer les demandes de Pret</h3>
               </NavLink>
             </div>
             <div className="commande">
-              <NavLink exact to="/User/DemandePret">
+              <NavLink exact to="/Admin/ListeClients">
                 <img
                   src={commande3}
                   alt="Liste détaillée des clients"

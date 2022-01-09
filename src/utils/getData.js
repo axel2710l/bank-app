@@ -3,15 +3,14 @@ import db from "./config";
 
 //////////////FULL////////////////
 
-export const getClients = () => {
+export const getClients = async () => {
   const clients = [];
   const ClientRef = collection(db, "Clients");
-  getDocs(ClientRef).then((snapshot) => {
-    snapshot.docs.forEach((document) => {
-      clients.push({ ...document.data(), id: document.id });
-    });
-  });
 
+  const result = await getDocs(ClientRef);
+  result.docs.forEach((document) => {
+    clients.push({ ...document.data(), id: document.id });
+  });
   return clients;
 };
 export const getEmployes = () => {
@@ -36,13 +35,13 @@ export const getHistorique = () => {
 
   return historique;
 };
-export const getPrets = () => {
+export const getPrets = async () => {
   const Prets = [];
   const PretsRef = collection(db, "Prets");
-  getDocs(PretsRef).then((snapshot) => {
-    snapshot.docs.forEach((document) => {
-      Prets.push({ ...document.data(), id: document.id });
-    });
+  const pret = await getDocs(PretsRef);
+  pret.docs.forEach((document) => {
+    console.log(document);
+    Prets.push({ ...document.data(), id: document.id });
   });
 
   return Prets;
@@ -84,38 +83,38 @@ export const getRetraits = () => {
 
 ////////////////With ID//////////////////
 
-export const getClientWithId = async (id) => {
-  const clientRef = doc(db, "Clients", id);
+export const getClientWithId = async (myId) => {
+  const clientRef = doc(db, "Clients", myId);
   const docSnap = await getDoc(clientRef);
   return { ...docSnap.data(), id: docSnap.id };
 };
-export const getEmployerWithId = async (id) => {
-  const EmployerRef = doc(db, "Employers", id);
+export const getEmployerWithId = async (myId) => {
+  const EmployerRef = doc(db, "Employers", myId);
   const docSnap = await getDoc(EmployerRef);
   return { ...docSnap.data(), id: docSnap.id };
 };
-export const getVersementsWithId = async (id) => {
-  const VersementsRef = doc(db, "Versements", id);
+export const getVersementsWithId = async (myId) => {
+  const VersementsRef = doc(db, "Versements", myId);
   const docSnap = await getDoc(VersementsRef);
   return { ...docSnap.data(), id: docSnap.id };
 };
-export const getVirementsWithId = async (id) => {
-  const VirementsRef = doc(db, "Virements", id);
+export const getVirementsWithId = async (myId) => {
+  const VirementsRef = doc(db, "Virements", myId);
   const docSnap = await getDoc(VirementsRef);
   return { ...docSnap.data(), id: docSnap.id };
 };
-export const getRetraitsWithId = async (id) => {
-  const RetraitsRef = doc(db, "Retraits", id);
+export const getRetraitsWithId = async (myId) => {
+  const RetraitsRef = doc(db, "Retraits", myId);
   const docSnap = await getDoc(RetraitsRef);
   return { ...docSnap.data(), id: docSnap.id };
 };
-export const getPretsWithId = async (id) => {
-  const PretsRef = doc(db, "Prets", id);
+export const getPretsWithId = async (myId) => {
+  const PretsRef = doc(db, "Prets", myId);
   const docSnap = await getDoc(PretsRef);
   return { ...docSnap.data(), id: docSnap.id };
 };
-export const getHistoriqueWithId = async (id) => {
-  const HistoriqueRef = doc(db, "Historique", id);
+export const getHistoriqueWithId = async (myId) => {
+  const HistoriqueRef = doc(db, "Historique", myId);
   const docSnap = await getDoc(HistoriqueRef);
   return { ...docSnap.data(), id: docSnap.id };
 };

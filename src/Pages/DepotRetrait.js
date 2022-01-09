@@ -1,8 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import SidebarClient from "../Components/SidebarClient";
+import { useAuth } from "../context/authContex";
+import { addRetrait, addVersement } from "../utils/addData";
+import { getClientWithId } from "../utils/getData";
 
 const DepotRetrait = () => {
+  const { currentUser } = useAuth();
+  const [code, setCode] = useState();
+  const [montant, setMontant] = useState();
+  const retrait = async () => {
+    if (!(code && montant)) alert("Veuillez remplir les deux champs");
+    else {
+      const { code: clientCode, solde } = await getClientWithId(
+        currentUser.uid
+      );
+      if (code === clientCode) {
+        const retraitData = {
+          client: currentUser.uid,
+          clientExSolde: solde,
+          clientNvSolde: solde + montant,
+          montant,
+        };
+        await addRetrait(retraitData);
+      } else {
+        alert("le code est erroné");
+      }
+    }
+  };
+  const versement = async () => {
+    if (!(code && montant)) alert("Veuillez remplir les deux champs");
+    else {
+      const { code: clientCode, solde } = await getClientWithId(
+        currentUser.uid
+      );
+      if (code === clientCode) {
+        const VersementsData = {
+          client: currentUser.uid,
+          clientExSolde: solde,
+          clientNvSolde: solde + montant,
+          montant,
+        };
+        await addVersement(VersementsData);
+      } else {
+        alert("le code est erroné");
+      }
+    }
+  };
   return (
     <div className="container">
       <div className="navbar">
@@ -23,24 +67,35 @@ const DepotRetrait = () => {
           </h1>
           <div className="depot">
             <input
-              type="text"
+              type="number"
               name="somme"
               className="ajouternomtache"
               autoFocus
               placeholder="00.00"
-              className='depotretrait'
-            ></input>{"  "}
+              className="depotretrait"
+              onChange={(e) => {
+                setMontant(e.target.valueAsNumber);
+              }}
+            ></input>
+            {"  "}
             <span>DA</span>
             <input
               type="text"
               name="id"
               className="ajouternomtache"
-              placeholder="id du compte"
-              className='depotretrait'
+              placeholder="code du compte"
+              className="depotretrait"
+              onChange={(e) => {
+                setCode(e.target.value);
+              }}
             ></input>
             <div className="btn">
-            <button className="retirer">Retirer</button>
-            <button className="deposer">Déposer</button>
+              <button className="retirer" onClick={retrait}>
+                Retirer
+              </button>
+              <button className="deposer" onClick={versement}>
+                Déposer
+              </button>
             </div>
           </div>
         </div>

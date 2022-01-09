@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../index.scss";
 import "../Styles/Inscription.scss";
 import { NavLink } from "react-router-dom";
@@ -7,12 +7,33 @@ import image from "../Images/Inscription.png";
 import { signup } from "../utils/auth";
 import { click } from "@testing-library/user-event/dist/click";
 import { getAuth } from "firebase/auth";
+import { useHistory } from "react-router-dom";
+import { updateClient } from "../utils/addData";
 
-const Inscription =  () => {
+const Inscription = () => {
+  const history = useHistory();
+  const [data, setData] = useState({});
   useEffect(() => {
     // recupérer les infos current user
     console.log(getAuth().currentUser);
-  }, [])
+    // history.push("/Profil");
+  }, []);
+  const handleSolde = (event) => {
+    const solde = event.target.valueAsNumber;
+    setData({ ...data, solde });
+    console.log(getAuth().currentUser.uid);
+  };
+  const handleStatut = (event) => {
+    console.log(event.target.value);
+    const statut = event.target.value;
+    setData({ ...data, statut });
+  };
+  const handleCode = (event) => {
+    const code = event.target.value;
+
+    setData({ ...data, code });
+  };
+
   return (
     <div id="inscription" className="container inscription">
       <div className="image">
@@ -20,11 +41,18 @@ const Inscription =  () => {
       </div>
       <div className="form-insc">
         <div className="title">
-          <h1>Inscrivez vous !</h1>
+          <h1>Veuillez remplir vos Insormations!</h1>
         </div>
 
-        <form>
-          <div className="nom-prenom ">
+        <form
+          onSubmit={() => {
+            history.push("/Profil");
+            alert(data);
+            console.log(data);
+            updateClient(getAuth().currentUser.uid, data);
+          }}
+        >
+          {/* <div className="nom-prenom ">
             <div className="half-width">
               <input type="text" name="nom" id="nom" placeholder="Nom" />
             </div>
@@ -36,37 +64,62 @@ const Inscription =  () => {
                 placeholder="Prénom"
               />
             </div>
+          </div> */}
+          <div className="full-width">
+            <input
+              type="number"
+              name="solde"
+              placeholder="Solde Initial"
+              onChange={handleSolde}
+            />
           </div>
           <div className="full-width">
-            <input type="text" name="email" placeholder="E-mail" />
+            <label>Selectionnez votre statut</label>
+            <select
+              name="pin-code"
+              placeholder="Votre statut "
+              onChange={handleStatut}
+            >
+              <option value="">---Choisissez---</option>
+
+              <option value="Entreprise">Entreprise</option>
+              <option value="Etudiant">Etudiant</option>
+              <option value="Employé">Employé</option>
+            </select>
+            {/* <input
+              type="select"
+              name="pin-code"
+              placeholder="Votre statut "
+              onChange={handleStatut}
+            /> */}
           </div>
           <div className="full-width">
             <input
               type="password"
-              name="password"
-              placeholder="Mot de passe "
+              name="pin-code"
+              placeholder="Code PIN (4 chiffres) "
+              onChange={handleCode}
             />
           </div>
           <div className="full-width">
             <input
               type="password"
-              name="confirm-password"
-              placeholder="Confirmez votre mot de passe "
+              name="confirm-pin"
+              placeholder="Confirmez votre code PIN "
             />
           </div>
-  
+
           <div className="full-width sign-in">
             <p>
-              Vous êtes déja inscrit?{" "}
-              <NavLink exact to="/sign-in" id="connexion_accueil">
-                Connectez vous!
-              </NavLink>
+              IMPORTANT! <br />
+              Gardez minutieusement votre{" "}
+              <span style={{ color: "red" }}>code PIN</span>
             </p>
           </div>
-        </form>
-        <div className="full-width">
-            <button className="btn" onClick={()=> {signup()}} >S'inscrire</button>
+          <div className="full-width">
+            <input className="btn" type="submit" value={"Confrimer"} />
           </div>
+        </form>
       </div>
     </div>
   );
