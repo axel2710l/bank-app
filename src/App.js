@@ -2,8 +2,6 @@ import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Accueil from "./Pages/Accueil";
 import Inscription from "./Pages/Inscription";
-import Connexion from "./Pages/Connexion";
-import AjoutSolde from "./Pages/AjoutSolde";
 import ProfilClient from "./Pages/ProfilClient";
 import DepotRetrait from "./Pages/DepotRetrait";
 import Transfert from "./Pages/Transfert";
@@ -24,8 +22,6 @@ const App = () => {
         <Switch>
           <Route path="/" exact component={Accueil} />
           <Route path="/sign-up" exact component={Inscription} />
-          <Route path="/sign-in" exact component={Connexion} />
-          <Route path="/Solde" exact component={AjoutSolde} />
           <Route path="/Profil" exact component={ProfilClient} />
           <Route path="/User/DepotRetrait" exact component={DepotRetrait} />
           <Route path="/User/Transfert" exact component={Transfert} />

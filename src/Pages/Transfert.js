@@ -7,6 +7,7 @@ import { getClients } from "../utils/getData";
 import { useAuth } from "../context/authContex";
 
 const Transfert = () => {
+  const [recherche, setrecherche] = useState("");
   const [clients, setClients] = useState();
   useEffect(() => {
     async function fetch() {
@@ -18,12 +19,20 @@ const Transfert = () => {
   const { currentUser } = useAuth();
 
   const mapObj = clients
-    ? clients.map((client) => {
-        if (client.id !== currentUser.uid) {
-          return <UserTransfert data={client} />;
-        }
-      })
-    : null;
+    ? clients
+        .filter((client) => {
+          if (recherche == "") {
+            return client;
+          } else if (client.nom.toLowerCase().includes(recherche.toLowerCase()))
+            return client;
+        })
+        .sort((a, b) => a.nom.localeCompare(b.nom))
+        .map((client) => {
+          if (client.id !== currentUser.uid) {
+            return <UserTransfert data={client} />;
+          }
+        })
+    : <Vide/>;
 
   return (
     <div className="container">
@@ -41,7 +50,11 @@ const Transfert = () => {
         <SidebarClient />
         <div className="contenu">
           <div className="recherche_container">
-            <input placeholder="Rechercher..." autoFocus></input>
+            <input
+              placeholder="Rechercher..."
+              autoFocus
+              onChange={(e) => setrecherche(e.target.value)}
+            ></input>
           </div>
           <div className="component_container">{mapObj}</div>
         </div>

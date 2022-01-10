@@ -7,6 +7,7 @@ import { getPrets } from "../utils/getData";
 
 const PretAdmin = () => {
   const [prets, setPrets] = useState();
+  const [recherche, setrecherche] = useState("");
   useEffect(() => {
     async function fetch() {
       const mesPrets = await getPrets();
@@ -22,7 +23,14 @@ const PretAdmin = () => {
           return <GestionPret key={pret.id} data={pret} />;
         }
       })
-    : null;
+    : <Vide/>;
+    //FILTRER RECHERCHE
+      // .filter((pret) => {
+    //   if (recherche == "") {
+    //     return pret;
+    //   } else if (pret.nom.toLowerCase().includes(recherche.toLowerCase()))
+    //     return pret;
+    // })
 
   return (
     <div className="container">

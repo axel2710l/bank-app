@@ -1,10 +1,12 @@
 import React from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Historique from "../Components/Historique";
 import Vide from "../Components/Vide";
 import SidebarClient from "../Components/SidebarClient";
 
 const HistoriqueClient = () => {
+  const [recherche, setrecherche] = useState("");
   return (
     <div className="container">
       <div className="navbar">
@@ -21,7 +23,8 @@ const HistoriqueClient = () => {
         <SidebarClient />
         <div className="contenu">
           <div className="recherche_container">
-            <input placeholder="Rechercher..." autoFocus></input>
+            <input placeholder="Rechercher..." autoFocus 
+            onChange={(e) => setrecherche(e.target.value)}></input>
           </div>
           <div className="component_container">
             <Historique />
