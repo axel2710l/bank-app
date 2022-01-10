@@ -29,6 +29,7 @@ const ConfirmTransfert = () => {
             montant,
           };
           await addVirement(virementData);
+
           alert("Done");
         } else {
           alert("Code erroné");
