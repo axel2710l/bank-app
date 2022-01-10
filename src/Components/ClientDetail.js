@@ -1,14 +1,15 @@
 import React from "react";
 import Avatar from '../Images/Avatar.png'
 
-const ClientDetail = () => {
+const ClientDetail = ({data ={}}) => {
+  
   return (
     <div className="component">
       <img src={Avatar}></img>
-      <p className="clients">DOE</p>
-      <p className="clients">Jhon</p>
-      <p className="mail">test@test.com</p>
-      <p className="clients">52000 DA</p>
+      <p className="clients">{data.nom.split(' ')[0]}</p>
+      <p className="clients">{data.nom.split(' ')[1]}</p>
+      <p className="mail">{data.email}</p>
+      <p className="clients">{data.solde + ' DA'}</p>
     </div>
   );
 };

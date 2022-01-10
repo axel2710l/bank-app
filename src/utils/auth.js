@@ -121,3 +121,7 @@ export const signup = async () => {
   //   // ...
   // });
 };
+export const signout =() =>{
+  const user = getAuth()
+  user.signOut()
+}

@@ -19,7 +19,7 @@ const GestionPret = ({ data = {} }) => {
   }, []);
   const onAccepter = async () => {
     const pretUpdate = {
-      employe: currentUser.dislpayName,
+      employe: currentUser.displayName,
       confirme: true,
       clientExSolde: solde,
       clientNvSolde: solde + montant,

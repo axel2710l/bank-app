@@ -20,19 +20,11 @@ const ProfilAdmin = () => {
         <SidebarAdmin />
         <div className="contenu">
           <h1>{`Bonjour ${
-            currentUser.displayName.split(" ")[0]
+            currentUser ? 
+            currentUser.displayName.split(" ")[0]:'Loading'
           }, Que souhaitez vous faire ? `}</h1>
           <div className="commandes">
-            <div className="commande">
-              <NavLink exact to="/Admin/Historique">
-                <img
-                  src={commande1}
-                  alt="Historique des transactions"
-                  id="img-transactions"
-                />
-                <h3>Voir l'Historique des transactions</h3>
-              </NavLink>
-            </div>
+
             <div className="commande">
               <NavLink exact to="/Admin/Pret">
                 <img src={commande2} alt="demandes de Pret" />

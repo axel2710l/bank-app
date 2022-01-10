@@ -47,7 +47,7 @@ export const addRetrait = async (data) => {
   await addDoc(HistoriqueRef, HistoriqueData);
   await setDoc(
     doc(db, "Clients", data.client),
-    { solde: data.clientExSolde - data.montant },
+    { soldeEx:data.clientExSolde ,solde: data.clientExSolde - data.montant },
     { merge: true }
   );
   alert("Retrait avec succes");
@@ -69,7 +69,7 @@ export const addVersement = async (data) => {
   await addDoc(HistoriqueRef, HistoriqueData);
   await setDoc(
     doc(db, "Clients", data.client),
-    { solde: data.clientExSolde + data.montant },
+    {  soldeEx:data.clientExSolde, solde: data.clientExSolde + data.montant },
     { merge: true }
   );
   alert("Versement avec succes");
@@ -91,12 +91,12 @@ export const addVirement = async (data) => {
   await addDoc(HistoriqueRef, HistoriqueData);
   await setDoc(
     doc(db, "Clients", data.clientEm),
-    { solde: data.clientEmExSolde - data.montant },
+    { soldeEx:data.clientEmExSolde, solde: data.clientEmExSolde - data.montant },
     { merge: true }
   );
   await setDoc(
     doc(db, "Clients", data.clientRec),
-    { solde: data.clientRecExSolde + data.montant },
+    { soldeEx : data.clientRecExSolde, solde: data.clientRecExSolde + data.montant },
     { merge: true }
   );
   alert("Virement avec succes");

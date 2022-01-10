@@ -48,7 +48,10 @@ const Inscription = () => {
             history.push("/Profil");
             alert(data);
             console.log(data);
-            updateClient(getAuth().currentUser.uid, data);
+            if(data.solde){
+
+              updateClient(getAuth().currentUser.uid, {... data,soldeEx : data.solde});
+            }
           }}
         >
           {/* <div className="nom-prenom ">

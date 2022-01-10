@@ -4,7 +4,10 @@ import "../index.scss";
 import Avatar from "../Images/Avatar.png";
 import { useAuth } from "../context/authContex";
 import { getEmployerWithId } from "../utils/getData";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import{signout} from '../utils/auth' 
 const SidebarAdmin = () => {
+  const history = useHistory()
   const [adminData, setAdminData] = useState({
     nom: "Loading",
     id: "Loading",
@@ -36,7 +39,10 @@ const SidebarAdmin = () => {
       <p>Admin</p>
       <p>{"id " + bestId(id)}</p>
       <p className="email">{email}</p>
-      <button>Déconnexion</button>
+      <button onClick={()=>{
+        signout()
+        history.push('/')
+      }}>Déconnexion</button>
     </div>
   );
 };

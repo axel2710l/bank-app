@@ -4,7 +4,7 @@ import db from "./config";
 //////////////FULL////////////////
 
 export const getClients = async () => {
-  const clients = [];
+ const clients = [];
   const ClientRef = collection(db, "Clients");
 
   const result = await getDocs(ClientRef);
@@ -12,7 +12,7 @@ export const getClients = async () => {
     clients.push({ ...document.data(), id: document.id });
   });
   return clients;
-};
+}; 
 export const getEmployes = () => {
   const employes = [];
   const employersRef = collection(db, "Employers");

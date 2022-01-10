@@ -25,12 +25,7 @@ const PretAdmin = () => {
       })
     : <Vide/>;
     //FILTRER RECHERCHE
-      // .filter((pret) => {
-    //   if (recherche == "") {
-    //     return pret;
-    //   } else if (pret.nom.toLowerCase().includes(recherche.toLowerCase()))
-    //     return pret;
-    // })
+
 
   return (
     <div className="container">
@@ -47,9 +42,7 @@ const PretAdmin = () => {
       <div className="colonne">
         <SidebarAdmin />
         <div className="contenu">
-          <div className="recherche_container">
-            <input placeholder="Rechercher..." autoFocus></input>
-          </div>
+
           <div className="component_container">{mapPrets}</div>
         </div>
       </div>

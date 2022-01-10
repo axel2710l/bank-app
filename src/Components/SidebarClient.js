@@ -4,8 +4,11 @@ import "../index.scss";
 import Avatar from "../Images/Avatar.png";
 import { useAuth } from "../context/authContex";
 import { getClientWithId } from "../utils/getData";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import{signout} from '../utils/auth' 
 
 const SidebarClient = ({}) => {
+  const history = useHistory()
   const [clientData, setClientData] = useState({
     nom: "Loading",
     id: "Loading",
@@ -36,10 +39,14 @@ const SidebarClient = ({}) => {
       <p className="email">{email}</p>
       <h3>Votre solde</h3>
       <p className="solde">{solde + " DA"}</p>
-      <NavLink exact to="/User/Historique" id="historique">
+      {/* <NavLink exact to="/User/Historique" id="historique">
         Votre historique
-      </NavLink>
-      <button>Déconnexion</button>
+      </NavLink> */}
+      <button onClick={()=>{
+        
+        history.push('/')
+
+      }}>Déconnexion</button>
     </div>
   );
 };
