@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import SidebarClient from "../Components/SidebarClient";
-// import DepotRetrait from "../Images/DepotRetrait.jpg"
-// import Transfert from "../Images/Transfert.jpg"
-// import DemandePret from "../Images/DemandePret.jpg"
 import commande1 from "../Images/DepotRetrait.jpg";
 import commande2 from "../Images/Transfert.jpg";
 import commande3 from "../Images/DemandePret.jpg";
