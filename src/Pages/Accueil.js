@@ -44,15 +44,6 @@ const Accueil = () => {
         <img src={logo}></img>
         <div className="btn_accueil">
           <button
-            id="inscrition_accueil"
-            onClick={() => {
-              sign();
-            }}
-          >
-            {" "}
-            Inscription
-          </button>
-          <button
             id="connexion_accueil"
             onClick={() => {
               sign();

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../index.scss";
 import "../Styles/Inscription.scss";
 import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
@@ -35,13 +34,13 @@ const Inscription = () => {
   };
 
   return (
-    <div id="inscription" className="container inscription">
+    <div className="container_inscription">
       <div className="image">
         <img src={image} alt="" />
       </div>
       <div className="form-insc">
         <div className="title">
-          <h1>Veuillez remplir vos Insormations!</h1>
+          <h1>Veuillez remplir vos Informations!</h1>
         </div>
 
         <form
@@ -72,15 +71,13 @@ const Inscription = () => {
               placeholder="Solde Initial"
               onChange={handleSolde}
             />
-          </div>
-          <div className="full-width">
-            <label>Selectionnez votre statut</label>
+      
             <select
               name="pin-code"
               placeholder="Votre statut "
               onChange={handleStatut}
             >
-              <option value="">---Choisissez---</option>
+              <option value="">---Statut---</option>
 
               <option value="Entreprise">Entreprise</option>
               <option value="Etudiant">Etudiant</option>
@@ -100,26 +97,23 @@ const Inscription = () => {
               placeholder="Code PIN (4 chiffres) "
               onChange={handleCode}
             />
-          </div>
-          <div className="full-width">
+ 
             <input
               type="password"
               name="confirm-pin"
               placeholder="Confirmez votre code PIN "
             />
           </div>
-
-          <div className="full-width sign-in">
+            <input className="btn" type="submit" value={"Confrimer"} />
+         
+        </form>
+        <div className="sign-in">
             <p>
               IMPORTANT! <br />
               Gardez minutieusement votre{" "}
-              <span style={{ color: "red" }}>code PIN</span>
+              <span >code PIN</span>
             </p>
           </div>
-          <div className="full-width">
-            <input className="btn" type="submit" value={"Confrimer"} />
-          </div>
-        </form>
       </div>
     </div>
   );

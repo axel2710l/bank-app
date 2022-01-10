@@ -1,38 +1,54 @@
 
-   $font-1: "Poppins", sans-serif;
-   $color-principale: #46a4fb;
-   $color-secondaire: #58c8eb;
-   $color-titre: #0888ff;
-   $color-option: #084a87;
-   
+$font-1: "Poppins", sans-serif;
+$color-principale: #46a4fb;
+$color-secondaire: #58c8eb;
+$color-titre: #0888ff;
+$color-option: #084a87;
+$color-input: #58c9eb91;
+$color-components: #58c9eb28;
+$color-vert: #32f245;
+$color-jaune: #fce465;
+$color-rouge: #f31f1f;
 
-.inscription{
+.container_inscription{
 
-    // background-color: black;
-    // color: red;
-    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
     .image{
-        border: $color-secondaire 1px solid;
-        width: 50%;
-        height: 100vh;
         margin: 0;
-        // background-color: aquamarine;
-        display: flex;
+        padding: 0;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width:100%;
+        height: auto;
+        z-index: 100;
         img{
-            width: 80%;
-            margin: auto;
-            align-items: center;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 22%;
+            margin: 0;
+            padding: 0;
+            margin-left: 25px;
         }
     }
     .form-insc{
-        position: relative;
-        // display: flex;
+        position: absolute;
+        top:32%;
+        left: 52%;
+        transform: translateX(-50%);
         width: 50%;
-        height: 100vh;
+        height: 65%;
         border: $color-secondaire 1px solid;
         margin: 0;
         .title{
             width: 100%;
+            text-align: center;
             h1{
                 color: $color-titre;
                 margin: auto;
@@ -43,8 +59,8 @@
         
         form{
             width: 100%;
-            
-            input{
+            margin: 0;
+            input,select{
                 border-radius: 0;
                 border: 1px $color-secondaire solid;
                 font-size: 18px;
@@ -52,16 +68,13 @@
             }
             input::placeholder{
                font-size: 18px;
-                // margin: 0 12px;
-                // color: red;
+               color: $color-input;
             }
 
             .nom-prenom{
-                margin-top: 2rem;
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 width: 80%;
-                margin-left: 10%;
                 .half-width{
                     // width: 50%;
                     margin: 0;
@@ -69,64 +82,59 @@
                         width: 90%;
                         height: 3rem;
                     }
-                    #prenom{
-                        margin-right: 10px;
-                        margin-left: 8%;
-                    }
+                    // #prenom{
+                    //     margin-right: 10px;
+                    //     margin-left: 8%;
+                    // }
                 }
                
             }
             .full-width{
                 width: 100%;
-                input{
+                display: flex;
+                input,select{
                     width: 79%;
-                    margin-left: 10%;
-                    margin-top: 2.5rem;
+                    margin-left: 5%;
+                    margin-right: 10%;
                     height: 3rem;
+                    outline: none;
+                    color: $color-principale;
+                }
+                select{
+                    width: 82%;
+                    
+                    option{
+                        color: $color-secondaire;
+                        
+                    }
+                }
+                input:focus, select:focus{
+                        outline: $color-principale 2px solid;
                 }
             }
             
-            .btn {
-                margin-left: 50%;
-                transform: translateX(-50%);
-                margin-top: 2.5rem;
-                padding: 17px 25px;
-                width: 30%px;
-                font-size: 1.2em;
-                border-radius: 15px;
-                color: white;
-                font-weight: bold;
-                background-color: $color-principale;
-                border: $color-principale 1px solid;
-                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-                
-              }
-              .btn:hover {
-                filter: brightness(110%);
-                transition: 0.1s ease-in-out;
-              }
-
-
         }
-        .btn {
-            margin-left: 50%;
+          .btn {
+            margin-top: 7vh;
+            position: relative;
+            left: 50%;
             transform: translateX(-50%);
-            margin-top: 2.5rem;
-            padding: 17px 25px;
-            width: 30%px;
-            font-size: 1.2em;
+            width: 200px;
+            height: 50px;
             border-radius: 15px;
             color: white;
+            font-size: 1.45em;
             font-weight: bold;
-            background-color: $color-principale;
-            border: $color-principale 1px solid;
+            cursor: pointer;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-            
-          }
-          .btn:hover {
-            filter: brightness(110%);
-            transition: 0.1s ease-in-out;
-          }
+            background-color: $color-secondaire;
+        }
+            .btn:hover {
+              filter: brightness(110%);
+              transition: 0.1s ease-in-out;
+            }
+          
+          
 
         .sign-in{
             position: absolute;
@@ -142,4 +150,10 @@
     
 }
 
-
+.sign-in{
+    width: 100%;
+span{
+    font-weight: bold;
+    color: rgb(255, 0, 0);
+}
+}
